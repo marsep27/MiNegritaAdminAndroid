@@ -1,0 +1,38 @@
+<ion-header class="ion-no-border" id="headerEve" mode="md">
+  <span class="header-title">Modificar {{mes}}</span>
+</ion-header>
+
+<ion-content mode="md">
+
+  <ion-grid scrollY=true>
+    <!--Registro-->
+    <ion-row>
+        <ion-col size="12" size-sm>
+          <ion-label color="azul">Mes: {{mes}}</ion-label>
+          <ckeditor [(ngModel)]="dias" [ngModelOptions]="{standalone: true}"></ckeditor>
+          {{dias}}
+        </ion-col>
+        <br>
+        <br>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer id="Footer" color="celeste" class="ion-no-border" lines="none">
+
+  <!--Botón de continuar-->
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <ion-button id="anterior" color="azul-claro" [routerLink]="['/eventos']">
+          Cancelar
+        </ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button color="anaranjado" (click)="modificarSantoral()">
+          Aceptar
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

@@ -1,0 +1,207 @@
+<ion-header class="ion-no-border ion-no-padding" mode="md">
+  <ion-toolbar class="ion-no-padding toolbar-start" *ngIf="!isInicio">
+    <ion-buttons class="header-back-btn" slot="start">
+      <ion-button (click)="parar()" routerLink="/devocionario">
+        <ion-icon color="light" name="arrow-back-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <h1 class="header-title">Coronilla</h1>
+    <h2 class="header-subtitle">a la Divina Misericordia</h2>
+    <ion-buttons class="header-play-btn-container" slot="start">
+      <ion-button class="header-play-btn" (click)="audio()">
+        <ion-icon class="header-play-btn-icon" color="light" src="assets/imágenes/play-icon.svg" slot="icon-only">
+        </ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <ion-toolbar class="ion-no-padding toolbar-player" *ngIf="isInicio">
+    <ion-buttons class="header-back-btn" slot="start">
+      <ion-button (click)="parar()" routerLink="/devocionario">
+        <ion-icon color="light" name="arrow-back-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <h1 class="header-title">Coronilla</h1>
+    <h2 class="header-subtitle">a la Divina Misericordia</h2>
+    <ion-range class="audio-range ion-no-padding" color="light" #range (touchmove)="touchMove()" (touchend)="touchEnd()"
+      (touchstart)="touchStart()" max="{{maxRangeValue}}" [(ngModel)]="currRangeTime">
+    </ion-range>
+    <ion-label class="curr-time" slot="start">
+      <ion-text color="light">{{currSecsText}}</ion-text>
+    </ion-label>
+    <ion-label class="total-time" slot="end">
+      <ion-text color="light">{{durationText}}</ion-text>
+    </ion-label>
+    <ion-button class="audio-btn" fill="clear" *ngIf="!isPlaying" (click)="play()">
+      <ion-icon class="audio-btn-icon" color="light" src="assets/imágenes/play-icon-2.svg"></ion-icon>
+    </ion-button>
+
+    <!-- Pause Button -->
+    <ion-button class="audio-btn" fill="clear" *ngIf="isPlaying" (click)="pause()">
+      <ion-icon class="audio-btn-icon" color="light" src="assets/imágenes/pause-icon.svg"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+<ion-content mode="md">
+  <div class="text-area-container" id="text-area-container">
+    <div class="text-area scroll-content" id="text-area" scrollY=true>
+      <h5 class="subtitle">La Señal de la Cruz:</h5>
+      <p class="text">
+        Por la señal de la Santa Cruz, de nuestros enemigos, líbranos Señor Dios nuestro. En el nombre del Padre,
+        del Hijo y del Espíritu Santo.
+      </p>
+      <span class="amen">Amén</span>
+      <br>
+      <h5 class="subtitle">Oración inicial:</h5>
+      <p class="text">
+        Expiraste, Jesús, pero la fuente de vida brotó para las almas y el mar de misericordia se abrió para el
+        mundo entero. Oh fuente de vida, insondable Misericordia Divina, abarca al mundo entero y derrámate sobre
+        nosotros.
+        Oh Sangre y Agua que brotaste del Corazón de Jesús, como una Fuente de Misericordia para nosotros, en Ti
+        confío.
+      </p>
+      <br>
+      <h5 class="subtitle">Padre Nuestro:</h5>
+      <p class="text">
+        Padre Nuestro, que estás en el cielo,
+        santificado sea tu nombre;
+        venga a nosotros tu reino;
+        hágase tu voluntad, en la tierra como en el cielo.
+      </p>
+      <br>
+      <p class="text">
+        Danos hoy nuestro pan de cada día;
+        perdona nuestras ofensas,
+        como también nosotros perdonamos a los que nos ofenden;
+        no nos dejes caer en la tentación,
+        y líbranos del mal.
+      </p>
+      <span class="amen">Amén</span>
+      <br>
+      <h5 class="subtitle">Ave María:</h5>
+      <p class="text">
+        Dios te salve María, llena eres de gracia, el Señor es contigo, bendita eres entre todas las mujeres y
+        bendito es el fruto de tu vientre, Jesús. <br> <br>Santa María, Madre de Dios, ruega por nosotros
+        pecadores, ahora y en la hora de nuestra muerte.
+      </p>
+      <span class="amen">Amén</span>
+      <br>
+      <h5 class="subtitle">Credo:</h5>
+      <p class="text">
+        Creo en Dios, Padre Todopoderoso, Creador del cielo y de la tierra. Creo en Jesucristo, Su único Hijo,
+        nuestro Señor, que fue concebido por obra y gracia del Espíritu Santo, nació de Santa María Virgen,
+        padeció bajo el poder de Poncio Pilato, fue crucificado, muerto y sepultado, descendió a los infiernos, al
+        tercer día resucitó de entre los muertos, subió a los cielos y está sentado a la derecha de Dios Padre
+        Todopoderoso. Desde allí ha de venir a juzgar a vivos y muertos.
+        Creo en el Espíritu Santo, la santa Iglesia Católica, la comunión de los santos, el perdón de los pecados,
+        la resurrección de la carne y la vida eterna.
+      </p>
+      <span class="amen">Amén</span>
+      <br>
+      <h5 class="subtitle subtitle-decenas">Forma de rezarlo:</h5>
+      <h5 class="subtitle subtitle-decena">1) Primera decena</h5>
+      <p class="text">Padre Eterno, Te ofrezco el Cuerpo y la Sangre, el Alma y la Divinidad de Tu Amadísimo Hijo,
+        nuestro
+        Señor Jesucristo, como propiciación de nuestros pecados y los del mundo entero.</p><sub
+        class="text text-decena">(Una vez)</sub>
+      <br>
+      <br>
+      <p class="text">Por Su dolorosa Pasión,</p> <sub class="text text-decena">ten misericordia de nosotros y del mundo
+        entero. (10 veces)<br></sub><br>
+      <br>
+      <h5 class="subtitle subtitle-decena">2) Segunda decena</h5>
+      <p class="text">Padre Eterno, Te ofrezco el Cuerpo y la Sangre, el Alma y la Divinidad de Tu Amadísimo Hijo,
+        nuestro
+        Señor Jesucristo, como propiciación de nuestros pecados y los del mundo entero.</p><sub
+        class="text text-decena">(Una vez)</sub>
+      <br>
+      <br>
+      <p class="text">Por Su dolorosa Pasión,</p> <sub class="text text-decena">ten misericordia de nosotros y del mundo
+        entero. (10 veces)<br></sub><br>
+      <br>
+      <h5 class="subtitle subtitle-decena">3) Tercera decena</h5>
+      <p class="text">Padre Eterno, Te ofrezco el Cuerpo y la Sangre, el Alma y la Divinidad de Tu Amadísimo Hijo,
+        nuestro
+        Señor Jesucristo, como propiciación de nuestros pecados y los del mundo entero.</p><sub
+        class="text text-decena">(Una vez)</sub>
+      <br>
+      <br>
+      <p class="text">Por Su dolorosa Pasión,</p> <sub class="text text-decena">ten misericordia de nosotros y del mundo
+        entero. (10 veces)<br></sub><br>
+      <br>
+      <h5 class="subtitle subtitle-decena">4) Cuarta decena</h5>
+      <p class="text">Padre Eterno, Te ofrezco el Cuerpo y la Sangre, el Alma y la Divinidad de Tu Amadísimo Hijo,
+        nuestro
+        Señor Jesucristo, como propiciación de nuestros pecados y los del mundo entero.</p><sub
+        class="text text-decena">(Una vez)</sub>
+      <br>
+      <br>
+      <p class="text">Por Su dolorosa Pasión,</p> <sub class="text text-decena">ten misericordia de nosotros y del mundo
+        entero. (10 veces)<br></sub><br>
+      <br>
+      <h5 class="subtitle subtitle-decena">5) Quinta decena </h5>
+      <p class="text">Padre Eterno, Te ofrezco el Cuerpo y la Sangre, el Alma y la Divinidad de Tu Amadísimo Hijo,
+        nuestro
+        Señor Jesucristo, como propiciación de nuestros pecados y los del mundo entero.</p><sub
+        class="text text-decena">(Una vez)</sub>
+      <br>
+      <br>
+      <p class="text">Por Su dolorosa Pasión,</p> <sub class="text text-decena">ten misericordia de nosotros y del mundo
+        entero. (10 veces)<br></sub>
+      <br>
+      <h5 class="subtitle">Doxología final:</h5>
+      <p class="text">
+        Santo Dios, Santo Fuerte, Santo Inmortal, ten piedad de nosotros y del mundo entero.</p> <sub
+        class="text text-decena">(3 veces)</sub>
+      <br>
+      <h5 class="subtitle">Letanías</h5>
+      <ion-grid class="ion-no-padding letanias">
+        <ion-row *ngFor="let letania of inicioLetanias">
+          <ion-col size="7.5" class="ion-no-padding letania-text">
+            {{letania.text}}
+          </ion-col>
+          <ion-col size="4.5" class="ion-no-padding letania-answer">
+            {{letania.answer}}
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid class="ion-no-padding letanias">
+        <ion-row *ngFor="let letania of letanias1">
+          <ion-col size="7.5" class="ion-no-padding letania-text">
+            {{letania.text}}
+          </ion-col>
+          <ion-col size="4.5" class="ion-no-padding letania-answer">
+            {{letania.answer}}
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid class="ion-no-padding letanias">
+        <ion-row *ngFor="let letania of letanias2">
+          <ion-col size="9.5" [innerHTML]="letania.text"  class="ion-no-padding letania-text">
+          </ion-col>
+          <ion-col size="2.5" class="ion-no-padding letania-answer">
+            {{letania.answer}}
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid class="ion-no-padding letanias">
+        <ion-row *ngFor="let letania of finLetanias">
+          <ion-col size="7.5" class="ion-no-padding letania-text">
+            {{letania.text}}
+          </ion-col>
+          <ion-col size="4.5" class="ion-no-padding letania-answer">
+            {{letania.answer}}
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <h5 class="subtitle">Oración final:</h5>
+      <p class="text">
+        Oh Dios Eterno, en quien la misericordia es infinita y el tesoro de compasión inagotable, vuelve a
+        nosotros Tu mirada bondadosa y aumenta Tu misericordia en nosotros, para que en momentos difíciles no nos
+        desesperemos ni nos desalentamos, sino que, con gran confianza, nos sometamos a Tu santa voluntad, que es
+        el Amor y la Misericordia Misma.
+      </p>
+      <span class="amen">Amén<br></span>
+    </div>
+  </div>
+</ion-content>

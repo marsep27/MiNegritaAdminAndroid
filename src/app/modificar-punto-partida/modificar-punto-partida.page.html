@@ -1,0 +1,74 @@
+<ion-header class="ion-no-border" id="headerEve" mode="md">
+  <span class="header-title">Modificar {{nombre}}</span>
+</ion-header>
+
+<ion-content mode="md">
+
+  <ion-grid scrollY=true>
+    <!--Registro-->
+    <ion-row>
+        <ion-col size="12" size-sm>
+          <ion-label color="azul">Nombre</ion-label>
+          <ion-input autocomplete="off" [(ngModel)]="nombre" type="text" inputmode="text" pattern="text"
+            tabindex="1" enterkeyhint="next" value={{nombre}} placeholder="Nombre del punto de partida" color="azul" class="shadow-red">
+          </ion-input>
+        </ion-col>
+        <br>
+        <ion-col size="12" size-sm>
+          <ion-label color="azul">Posición</ion-label>
+          <ion-input autocomplete="off" [(ngModel)]="orden" type="number" inputmode="number" pattern="number" tabindex="2" enterkeyhint="next"
+          value={{orden}} placeholder="Posición en aparecer" color="azul" class="shadow-red"></ion-input>
+        </ion-col>
+        <br>
+        <ion-col size="12" size-sm>
+          <ion-label color="azul">Kilómetros totales</ion-label>
+          <ion-input autocomplete="off" [(ngModel)]="kmTotal" type="number" inputmode="number" pattern="number" tabindex="3" enterkeyhint="next"
+          value={{kmTotal}} placeholder="Distancia en kilómetros" color="azul" class="shadow-red"></ion-input>
+        </ion-col>
+        <br>
+        <ion-col size="12" size-sm>
+          <ion-label color="azul">Pasos totales</ion-label>
+          <ion-input autocomplete="off" [(ngModel)]="pasosTotal" type="number" inputmode="number" pattern="number" tabindex="4" enterkeyhint="next"
+          value={{pasosTotal}} placeholder="Distancia en pasos" color="azul" class="shadow-red"></ion-input>
+        </ion-col>
+        <br>
+        <ion-col size="12" size-sm>
+          <ion-label color="azul">Horas totales</ion-label>
+          <ion-input autocomplete="off" [(ngModel)]="horas" type="number" inputmode="number" pattern="number" tabindex="5" enterkeyhint="next"
+          value={{horas}} placeholder="Distancia en horas" color="azul" class="shadow-red"></ion-input>
+        </ion-col>
+        <br>
+        <ion-col size="12" size-sm>
+          <ion-label color="azul">Minutos totales</ion-label>
+          <ion-input autocomplete="off" [(ngModel)]="minutos" type="number" inputmode="number" pattern="number" tabindex="6" enterkeyhint="next"
+          value={{minutos}} placeholder="Suma faltante a las horas" color="azul" class="shadow-red"></ion-input>
+        </ion-col>
+        <br>
+        <ion-col size="12" size-sm>
+          <ion-label color="azul">Tiempo en milisegundos</ion-label>
+          <ion-input autocomplete="off" [(ngModel)]="tiempoMilisegundos" type="number" inputmode="number" pattern="number" tabindex="7" enterkeyhint="next"
+          value={{tiempoMilisegundos}} placeholder="Tiempo total en milisegundos" color="azul" class="shadow-red"></ion-input>
+        </ion-col>
+        <br>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer id="Footer" color="celeste" class="ion-no-border" lines="none">
+
+  <!--Botón de continuar-->
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <ion-button id="anterior" color="azul-claro" [routerLink]="['/puntos-partida']">
+          Cancelar
+        </ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button color="anaranjado" (click)="modificarPunto()">
+          Aceptar
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

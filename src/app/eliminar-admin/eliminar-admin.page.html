@@ -1,0 +1,115 @@
+<ion-header class="ion-no-border" id="headerea" mode="md">
+  <ion-button fill="clear" [routerLink]="['/perfil']">
+    <ion-icon slot="icon-only" color="azul" name="arrow-back-outline"></ion-icon>
+  </ion-button>
+  <br>
+  <span>Eliminar administradores</span>
+</ion-header>
+
+<ion-content mode="md">
+
+  <div mode="md" id="segmentea">
+    <ion-grid class="Puntos">
+      <ion-row>
+        <ion-col size="12" *ngIf="!contentLoaded">
+          <ion-card *ngFor="let item of [1,2,3,4,5,6,7,8,9]">
+            <ion-grid>
+              <ion-row>
+                <ion-col size="3">
+                  <ion-text>
+                    <h5>
+                      <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+                    </h5>
+                    <h4>
+                      <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+                    </h4>
+                  </ion-text>
+                </ion-col>
+                <ion-col size="8">
+                  <ion-text>
+                    <h3>
+                      <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+                      <p>
+                        <ion-skeleton-text animated style="width: 20%"></ion-skeleton-text>
+                      </p>
+                    </h3>
+                  </ion-text>
+                </ion-col>
+                <ion-col size="1">
+                  <ion-card-content class="ion-no-padding">
+                    <ion-skeleton-text animated style="width: 10%"></ion-skeleton-text>
+                  </ion-card-content>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card>
+        </ion-col>
+        <ion-col size="12" *ngIf="contentLoaded">
+          <ion-card *ngFor="let adm of admin"
+            (click)="PopAdmin(adm.nombre, adm.apellidos, adm.avatar, adm.idAdmin)">
+            <ion-grid>
+              <ion-row>
+                <ion-col size="11">
+                  <ion-text>
+                    <h3><b>{{adm.nombre}}</b>
+                      {{adm.apellidos}}
+                    </h3>
+                  </ion-text>
+                </ion-col>
+                <ion-col size="1">
+                  <ion-card-content class="ion-no-padding">
+                    <img src="assets/imágenes/3puntos.svg" />
+                  </ion-card-content>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  </div>
+
+  <!--Full pop Punto-->
+  <div id="PopAdmin" mode="md">
+
+    <!-- Minimize Icon -->
+    <ion-buttons slot="end">
+      <ion-button (click)="minimize()">
+        <img src="assets/imágenes/x.svg">
+      </ion-button>
+    </ion-buttons>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <div class="avatar">
+            <img src={{avatar}} alt="">
+          </div>
+        </ion-col><br><br><br><br><br><br><br>
+        <ion-col class="scroll" size="12" scrollY=true>
+          <p><b>Nombre: </b> {{nombre}}
+            <br>
+            <br>
+            <b>Apellidos: </b> {{apellidos}}
+          </p>
+         </ion-col>
+      </ion-row>
+    </ion-grid>
+    <br>
+    <ion-grid class="ion-text-center" style="margin: 0px 20px 20px 20px;" *ngIf="verificacion">
+      <ion-row>
+        <ion-col size="12" (click)="borrarAdmin()">
+          <img style="vertical-align: bottom; margin-bottom: 7px; height: 20px;" src="assets/imágenes/borrar.svg" />
+          <sub class="borrar">
+            Eliminar administrador
+          </sub>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+</ion-content>

@@ -1,0 +1,43 @@
+<ion-header class="ion-no-border" id="headerEve" mode="md">
+  <span class="header-title">Modificar {{title}}</span>
+</ion-header>
+
+<ion-content mode="md">
+
+  <ion-grid scrollY=true>
+    <!--Registro-->
+    <ion-row>
+        <ion-col size="12" size-sm>
+          <ion-label color="azul">Título</ion-label>
+          <ion-input autocomplete="off" [(ngModel)]="title" type="text" inputmode="text" pattern="text"
+            tabindex="1" enterkeyhint="next" value={{title}} color="azul" class="shadow-red">
+          </ion-input>
+        </ion-col>
+        <br>
+        <ion-col size="12" size-sm>
+          <ion-label color="azul">Texto</ion-label>
+          <ion-textarea [(ngModel)]="text" [ngModelOptions]="{standalone: true}" value={{text}} color="azul" class="shadow-red-text" auto-grow="true"></ion-textarea>
+        </ion-col>
+        <br>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer id="Footer" color="celeste" class="ion-no-border" lines="none">
+
+  <!--Botón de continuar-->
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <ion-button id="anterior" color="azul-claro" [routerLink]="['/devocionario']">
+          Cancelar
+        </ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button color="anaranjado" (click)="modificarMeditacion()">
+          Aceptar
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

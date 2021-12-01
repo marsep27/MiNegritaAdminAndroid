@@ -1,0 +1,84 @@
+<ion-header class="ion-no-border" id="headerPer" mode="md">
+  <ion-toolbar></ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="false" slot="fixed" mode="md">
+  <div class="scroll-content" id="segmentPer" mode="md">
+    <div class="profile">
+      <ion-buttons slot="primary">
+        <span class="profile-title">Perfil</span>
+        <ion-button class="profile-settings" [routerLink]="['/ajustes-perfil']" (click)='vibracion()' mode="md">
+          <ion-icon class="profile-settings-icon" slot="icon-only" src="assets/imágenes/settings-icon.svg"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <div class="avatar" *ngIf="contentLoaded">
+        <img src={{avatar}} alt="">
+      </div>
+      <div class="avatar" *ngIf="!contentLoaded">
+        <ion-avatar>
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-avatar>
+      </div>
+    </div>
+    <div class="profile-info">
+      <div class="user-meta ion-text-center" *ngIf="contentLoaded">
+        <h2 class="user-name">¡Hola {{name}}!</h2>
+        <h2 class="cards-title">Administración</h2>
+        <ion-card style="height: 60px;" (click)='goRegistro()'>
+          <ion-grid>
+            <ion-row>
+              <ion-col size="2">
+                <img class="card-image" style="height: 55px; width: 55px; margin-top: 0px; margin-left: 0px;"
+                 src="assets/imágenes/plus.svg">
+              </ion-col>
+              <ion-col size="10">
+                <ion-card-content class="ion-no-padding" style="margin-top: 15px;">
+                  <p class="card-info">Agregá nuevos administradores.</p>
+                </ion-card-content>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card>
+        <ion-card [routerLink]="['/eliminar-admin']" style="height: 60px;" (click)='vibracion()'>
+          <ion-grid>
+            <ion-row>
+              <ion-col size="2">
+                <img class="card-image" style="height: 30px; width: 30px; margin-top: 10px; margin-left: 10px;" 
+                src="assets/imágenes/borrar.svg">
+              </ion-col>
+              <ion-col size="10">
+                <ion-card-content class="ion-no-padding" style="margin-top: 15px;">
+                  <p class="card-info">Eliminá algún administrador.</p>
+                </ion-card-content>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card>
+      </div>
+    </div>
+  </div>
+</ion-content>
+<ion-footer class="ion-no-border" id="footPer" mode="md">
+  <ion-img id="donate-img" src="assets/imágenes/tab.svg" [routerLink]="['/donacion']" (click)='vibracion()'></ion-img>
+  <ion-tab-bar>
+    <ion-tab-button [routerLink]="['/eventos']" (click)='vibracion()'>
+      <ion-img id="eventos" src="assets/imágenes/eventos.svg"></ion-img>
+      <ion-label color="azul">Eventos</ion-label>
+    </ion-tab-button>
+    <ion-tab-button [routerLink]="['/devocionario']" (click)='vibracion()'>
+      <ion-img id="devocionario" src="assets/imágenes/devocionario.svg"></ion-img>
+      <ion-label color="azul">Devocionario</ion-label>
+    </ion-tab-button>
+    <ion-tab-button [routerLink]="['/donacion']" (click)='vibracion()'>
+      <ion-label color="celeste"></ion-label>
+    </ion-tab-button>
+    <ion-tab-button [routerLink]="['/romeria']" (click)='vibracion()'>
+      <ion-img id="romeria" src="assets/imágenes/romeria.svg"></ion-img>
+      <ion-label color="azul">Basílica</ion-label>
+    </ion-tab-button>
+    <ion-tab-button [routerLink]="['/perfil']" (click)='vibracion()'>
+      <ion-img id="perfil" src="assets/imágenes/tapPerfil_select.svg"></ion-img>
+      <ion-label id="select" color="azul">Perfil</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-footer>

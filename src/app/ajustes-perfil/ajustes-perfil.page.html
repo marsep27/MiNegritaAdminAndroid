@@ -1,0 +1,167 @@
+<ion-header class="ion-no-border" id="headAju" mode="md">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button class="header-back-btn" defaultHref="/perfil" text="" icon="arrow-back-outline"
+        (click)="goBackDefault()"></ion-back-button>
+    </ion-buttons>
+    <div>
+      <ion-title class="header-title">Ajustes</ion-title>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<!--Menú en ajustes-->
+<ion-content mode="md">
+  <ion-list class="settings-options" id="contentAju">
+    <ion-item class="item">
+      <ion-label class="settings-opts-label" (click)='vibracion()' [routerLink]="['/editar-perfil']">Perfil</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label class="settings-opts-label" (click)='contactsoport()'>Contacto y soporte</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label class="settings-opts-label" (click)='legal()'>Legal</ion-label>
+    </ion-item>
+    <!--<ion-item>
+      <ion-label class="settings-opts-label" (click)='patrocinadores()'>Patrocinadores</ion-label>
+    </ion-item>-->
+    <ion-item lines="none">
+      <ion-label class="settings-opts-label" (click)='presentLogOutAlert()'>Cerrar sesión</ion-label>
+    </ion-item>
+  </ion-list>
+  <span class="version-contact">V 1.0.0 | minegrita@santuarionacional.org</span>
+
+  <!--Full pop Contacto y soporte-->
+  <div id="contactsoport">
+    <ion-buttons slot="end">
+      <ion-button (click)="minimizeContactsoport()">
+        <img src="assets/imágenes/x.svg">
+      </ion-button>
+    </ion-buttons>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <h2>
+            Contacto y soporte
+          </h2>
+        </ion-col>
+        <ion-col class="ion-text-center scroll" size="12" scrollY=true>
+            <ion-grid>
+              <ion-row>
+                <ion-col size="12">
+                  <h3>¿Necesitás ayuda?</h3>
+                  <p>Ponte en contacto con nosotros por medio del siguiente correo electrónico:</p>
+                  <h5 (click)="copiarAlPortapapeles()"><u>minegrita@santuarionacional.org</u></h5>
+                  <p>Pronto nos podemos en contacto con vos</p>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <!--Full pop Legal-->
+  <div id="legal">
+    <ion-buttons slot="end">
+      <ion-button (click)="minimizeLegal()">
+        <img src="assets/imágenes/x.svg">
+      </ion-button>
+    </ion-buttons>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <h2>
+            Legal
+          </h2>
+        </ion-col>
+        <ion-col class="ion-text-center scroll" size="12" scrollY=true>
+            <ion-grid>
+              <ion-row>
+                <ion-col size="12">
+                  <h3>Esta aplicación fue desarrollada y donada por los siguientes profesores y estudiantes del Tecnológico de Costa Rica:</h3>
+                  <h2><b>Equipo de gestión del proyecto:</b></h2>
+                  <p>Eugenio Mata Moya<br>
+                    Ivonne Madrigal Gaitán<br>
+                    María Estrada Sánchez<br>
+                    Luis Roberto Villalobos Arias</p>
+                  <h2><b>Equipo de diseño:</b></h2>
+                  <p>Maricruz Linares Ramírez<br>
+                    Sofía Molina Brenes<br>
+                    Josué González Quirós</p>
+                  <h2><b>Equipo de desarrollo:</b></h2>
+                  <p>Ana Paula Rojas Rodríguez<br>
+                    Lindsay Morales Bonilla<br>
+                    Marco Soto Morera</p>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <!--Full pop Patrocinadores-->
+  <!--<div id="patrocinadores">
+    <ion-buttons slot="end">
+      <ion-button (click)="minimizePatrocinadores()">
+        <img src="assets/imágenes/x.svg">
+      </ion-button>
+    </ion-buttons>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <h2>
+            Nuestros patrocinadores
+          </h2>
+        </ion-col>
+        <ion-col class="ion-text-center scroll" size="12" scrollY=true>
+            <ion-grid>
+              <ion-row>
+                <ion-col size="6">
+                  <img src="assets/imágenes/Misa.svg">
+                </ion-col>
+                <ion-col size="6">
+                  <img src="assets/imágenes/Misa.svg">
+                </ion-col>
+                <ion-col size="6">
+                  <img src="assets/imágenes/Misa.svg">
+                </ion-col>
+                <ion-col size="6">
+                  <img src="assets/imágenes/Misa.svg">
+                </ion-col>
+                <ion-col size="6">
+                  <img src="assets/imágenes/Misa.svg">
+                </ion-col>
+                <ion-col size="6">
+                  <img src="assets/imágenes/Misa.svg">
+                </ion-col>
+                <ion-col size="6">
+                  <img src="assets/imágenes/Misa.svg">
+                </ion-col>
+                <ion-col size="6">
+                  <img src="assets/imágenes/Misa.svg">
+                </ion-col>
+                <ion-col size="6">
+                  <img src="assets/imágenes/Misa.svg">
+                </ion-col>
+                <ion-col size="6">
+                  <img src="assets/imágenes/Misa.svg">
+                </ion-col>
+                <ion-col size="6">
+                  <img src="assets/imágenes/Misa.svg">
+                </ion-col>
+                <ion-col size="6">
+                  <img src="assets/imágenes/Misa.svg">
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>-->  
+</ion-content>
+
+<ion-footer class="ion-no-border" style="background: white;" id="fooAdj">
+  <ion-img  style="height: 150px;" src="assets/imágenes/logo-basilica.png" (click)='go()'></ion-img>
+</ion-footer>

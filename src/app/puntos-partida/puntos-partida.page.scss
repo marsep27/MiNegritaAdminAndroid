@@ -1,0 +1,235 @@
+* {
+    font-family: "VisbyCF-Light";
+}
+
+ion-header {
+    background: #f4fcfd;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.08);
+    height: 115px;
+    span {
+        font-size: 27px;
+        font-family: "VisbyCF-Bold";
+        --background: #f4fcfd;
+        color: #0f7386;
+        margin-left: 4vw;
+        height: 115px;
+    }
+}
+ion-content {
+    --background: #ffffff;
+    #BotonesAE {
+        margin: 0px;
+        ion-row {
+            ion-col {
+                .agregarPunto {
+                    width: 100%;
+                    height: 35px;
+                    --background: #f8a957;
+                    --border-radius: 10px;
+                    font-family: "VisbyCF-Light";
+                    font-size: 14px;
+                    text-transform: none;
+                    text-align: center;
+                    bottom: 1px;
+                }
+            }
+        }
+    }
+
+    #Actividades {
+        background: #f3fafb;
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.08);
+        border-radius: 11px;
+        margin-top: 0px;
+        margin-bottom: 5px;
+        margin-left: 20px;
+        margin-right: 20px;
+        ion-grid {
+            ion-row {
+                ion-col {
+                    img {
+                        vertical-align: middle;
+                        margin-top: 0px;
+                    }
+                    ion-text {
+                        text-align: left;
+                        vertical-align: middle;
+                        h1 {
+                            font-family: "VisbyCF-Bold";
+                            font-size: 18px;
+                            line-height: 22px;
+                            color: #159bad;
+                            margin-top: 5px;
+                            margin-bottom: 0px;
+                            vertical-align: middle;
+                        }
+                        p {
+                            font-family: "VisbyCF-Medium";
+                            font-size: 15px;
+                            line-height: 18px;
+                            color: #159bad;
+                            margin-bottom: 0px;
+                            vertical-align: middle;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .Puntos {
+        ion-row {
+            ion-col {
+                ion-text {
+                    font-family: "VisbyCF-DemiBold";
+                    font-size: 18px;
+                    color: #5aa5b3;
+                }
+                ion-card {
+                    background: rgba(244, 252, 253, 0.9);
+                    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.08);
+                    border-radius: 12px;
+                    ion-grid {
+                        ion-row {
+                            ion-col {
+                                ion-card-content {
+                                    img {
+                                        margin-top: 25px;
+                                        vertical-align: middle;
+                                    }
+                                }
+                                ion-text {
+                                    h5 {
+                                        font-family: "VisbyCF-Bold";
+                                        font-size: 26px;
+                                        color: #187384;
+                                        margin-top: 0px;
+                                        margin-bottom: 0px;
+                                        vertical-align: middle;
+                                        text-align: center;
+                                    }
+                                    h4 {
+                                        font-family: "VisbyCF-Bold";
+                                        font-size: 20px;
+                                        color: #187384;
+                                        margin-top: 0px;
+                                        margin-bottom: 0px;
+                                        vertical-align: middle;
+                                        text-align: center;
+                                    }
+                                    h3 {
+                                        font-family: "VisbyCF-Light";
+                                        font-size: 16px;
+                                        color: #5aa5b3;
+                                        margin-top: 10px;
+                                        margin-bottom: 0px;
+                                        vertical-align: middle;
+                                    }
+                                    p {
+                                        font-family: "VisbyCF-Light";
+                                        font-size: 16px;
+                                        color: #5aa5b3;
+                                        margin-top: 0px;
+                                        margin-bottom: 0px;
+                                        vertical-align: middle;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #PopPunto {
+        transition: 0.5s;
+        position: fixed;
+        width: 312px;
+        height: 612px;
+        display: block;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        background: #fafdfe;
+        box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.08);
+        border-radius: 12px;
+        z-index: 20;
+        bottom: -1000px;
+        ion-buttons {
+            margin-top: 10px;
+            position: absolute;
+            right: 1vw;
+
+            ion-button {
+                height: 2.5vh;
+            }
+        }
+        ion-grid {
+            margin: 20px 20px 0px 20px;
+            height: 430px;
+            ion-row {
+                ion-col {
+                    h2 {
+                        font-family: "VisbyCF-Bold";
+                        font-size: 20px;
+                        color: #1390a1;
+                        text-align: center;
+                        margin-top: 0px;
+                    }
+                }
+                #direccion {
+                    padding: 0px;
+                    padding-bottom: 15px;
+                    ion-text {
+                        font-family: "VisbyCF-Medium";
+                        font-size: 14px;
+                        color: #1390a1;
+                    }
+                }
+                .scroll {
+                    overflow-y: scroll;
+                    height: 335px;
+                    padding: 0px;
+                    ion-text {
+                        font-family: "VisbyCF-Medium";
+                        font-size: 14px;
+                        color: #1390a1;
+                    }
+                    p {
+                        margin-top: 0px;
+                        margin-bottom: 10px;
+                        font-family: "VisbyCF-Light";
+                        font-size: 16px;
+                        line-height: 22px;
+                        color: #1390a1;
+                        white-space: pre-wrap;
+                    }
+                }
+            }
+        }
+        .reserva {
+            width: 100%;
+            height: 35px;
+            --background: #f8a957;
+            --border-radius: 10px;
+            font-family: "VisbyCF-Bold";
+            font-size: 17.2174px;
+            text-transform: none;
+            text-align: center;
+            bottom: 1px;
+        }
+        .modificar {
+            font-family: "VisbyCF-DemiBold";
+            font-size: 14px;
+            color: #0F7386;
+            vertical-align: text-top;
+        }
+        .borrar {
+            font-family: "VisbyCF-DemiBold";
+            font-size: 14px;
+            color: #f8a957;
+            vertical-align: text-top;
+        }
+    }
+}

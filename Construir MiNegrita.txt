@@ -1,0 +1,34 @@
+visual studio code:
+Repositorio:
+https://github.com/marsep27/MiNegrita.git
+npm install --save
+
+APK:
+	ionic cordova build --release android
+Firma	keytool -genkey -v -keystore MiNegrita -alias MiNegrita -keyalg RSA -keysize 2048 -validity 10000
+Fapk	jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore MiNegrita app-release-unsigned.apk MiNegrita
+SHA1	keytool -list -printcert -jarfile app-release-unsigned.apk
+Change	zipalign -v 4 app-release-unsigned.apk AdminMiNegrita.apk
+
+SHA1:
+	http://tomeko.net/online_tools/hex_to_base64.php
+	16:F1:A7:A3:D9:73:D1:59:C3:81:C4:23:4C:C7:07:E9:EF:6B:FD:8B
+	F2:2C:2C:33:1C:74:BF:C6:BA:D1:C8:F2:26:40:AA:BA:12:6A:9A:CF
+	FvGno9lz0VnDgcQjTMcH6e9r/Ys=
+
+4542404919134939
+ ionic cordova plugin add cordova-plugin-facebook4 --variable APP_ID="321302089447965" --variable APP_NAME="Mi Negrita"
+
+**IOS**
+ionic cordova build --release ios
+ionic cordova build ios --prod --optimizejs --minifycss --minifyjs
+ionic emulate ios (Ver app en emulador)
+ios-sim showdevicetypes (Ver la lista de iphones)
+ionic emulate ios --target="iPhone-5s"
+
+cambiar analytics
+ng analytics off
+
+Problema con cordova
+sudo chown -R $USER /Users/cic/Library/Preferences/insight-nodejs/
+sudo gem install cocoapods

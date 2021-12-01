@@ -1,0 +1,51 @@
+<ion-header class="ion-no-border" id="headerEve" mode="md">
+  <span class="header-title">Modificar {{modificacion}}</span>
+</ion-header>
+
+<ion-content mode="md">
+
+  <ion-grid scrollY=true>
+    <!--Registro-->
+    <ion-row>
+        <ion-col size="12" size-sm>
+          <ion-label color="azul">Horario de {{modificacion}}</ion-label>
+          <ckeditor [(ngModel)]="infoModificacion" [ngModelOptions]="{standalone: true}"></ckeditor>
+          {{infoModificacion}}
+        </ion-col>
+        <br>
+        <ion-col *ngIf="habilitarTel" size="12" size-sm>
+          <ion-label color="azul">Teléfono parroquial</ion-label>
+          <ion-input autocomplete="off" type="text" inputmode="text" pattern="text"
+            tabindex="1" enterkeyhint="next" [(ngModel)]="tel" value={{tel}} color="azul" class="shadow-red">
+          </ion-input>
+        </ion-col>
+        <ion-col size="12" size-sm>
+          <ion-label color="azul">¿Horario necesario?</ion-label>
+          <ion-select interface="popover" [(ngModel)]="moreInfo" value={{moreInfo}} class="shadow-red ion-no-border">
+            <ion-select-option *ngFor="let moreInfo of moreInfor" value="{{moreInfo.info}}">{{moreInfo.info}}
+            </ion-select-option>
+          </ion-select>
+        </ion-col>
+        <br>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer id="Footer" color="celeste" class="ion-no-border" lines="none">
+
+  <!--Botón de continuar-->
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <ion-button id="anterior" color="azul-claro" [routerLink]="['/eventos']">
+          Cancelar
+        </ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button color="anaranjado" (click)="modificarHorario()">
+          Aceptar
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

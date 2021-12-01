@@ -1,0 +1,51 @@
+<ion-header class="ion-no-border" id="headerEve" mode="md">
+  <span class="header-title">Modificar anuncio</span>
+</ion-header>
+
+<ion-content mode="md">
+
+  <ion-grid scrollY=true>
+    <!--Registro-->
+    <ion-row>
+        <ion-col size="12" size-sm>
+          <ion-label color="azul">Título</ion-label>
+          <ion-input autocomplete="off" type="text" inputmode="text" pattern="text"
+            tabindex="1" enterkeyhint="next" [(ngModel)]="titulo" value={{titulo}} color="azul" class="shadow-red">
+          </ion-input>
+        </ion-col>
+        <br>
+        <ion-col size="12" size-sm>
+          <ion-label color="azul">Anuncio</ion-label>
+          <ckeditor [(ngModel)]="anuncio1" [ngModelOptions]="{standalone: true}"></ckeditor>
+          {{anuncio1}}
+        </ion-col>
+        <br><ion-col size="12" size-sm>
+          <ion-label color="azul">¿Anuncio necesario?</ion-label>
+          <ion-select interface="popover" [(ngModel)]="moreInfo" value={{moreInfo}} class="shadow-red ion-no-border">
+            <ion-select-option *ngFor="let moreInfo of moreInfor" value="{{moreInfo.info}}">{{moreInfo.info}}
+            </ion-select-option>
+          </ion-select>
+        </ion-col>
+        <br>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer id="Footer" color="celeste" class="ion-no-border" lines="none">
+
+  <!--Botón de continuar-->
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <ion-button id="anterior" color="azul-claro" [routerLink]="['/eventos']">
+          Cancelar
+        </ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button color="anaranjado" (click)="modificarAnuncio()">
+          Aceptar
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

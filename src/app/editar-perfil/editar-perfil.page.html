@@ -1,0 +1,84 @@
+<ion-header class="ion-no-border ion-no-paddig" mode="md">
+  <ion-toolbar class="ion-no-padding">
+    <ion-title class="header-title ion-no-padding">Editar perfil</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button class="close-settings" [routerLink]="['/ajustes-perfil']">
+        <ion-icon class="close-settings-icon" slot="icon-only" src="assets/imágenes/close-icon.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="false" slot="fixed" mode="md">
+
+  <div class="scroll-content">
+    <div class="profile-avatar" *ngIf="contentLoaded">
+      <ion-buttons slot="primary">
+        <ion-button class="profile-avatar-arrow" (click)="previousAvatar()">
+          <ion-icon class="profile-avatar-arrow-icon" slot="icon-only" src="assets/imágenes/flecha-izq-2.svg">
+          </ion-icon>
+        </ion-button>
+        <ion-avatar class="profile-avatar-previous">
+          <img src={{prevAvatar}}>
+        </ion-avatar>
+        <ion-avatar class="profile-avatar-actual">
+          <img src={{avatar}}>
+        </ion-avatar>
+        <ion-avatar class="profile-avatar-next">
+          <img src={{sigAvatar}}>
+        </ion-avatar>
+        <ion-button class="profile-avatar-arrow" (click)="nextAvatar()">
+          <ion-icon class="profile-avatar-arrow-icon" slot="icon-only" src="assets/imágenes/flecha-der-2.svg">
+          </ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </div>
+
+    <div class="profile-avatar" *ngIf="!contentLoaded">
+      <ion-buttons slot="primary">
+        <ion-button class="profile-avatar-arrow" (click)="previousAvatar()">
+          <ion-icon class="profile-avatar-arrow-icon" slot="icon-only" src="assets/imágenes/flecha-izq-2.svg">
+          </ion-icon>
+        </ion-button>
+        <ion-avatar class="profile-avatar-previous">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-avatar>
+        <ion-avatar class="profile-avatar-actual">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-avatar>
+        <ion-avatar class="profile-avatar-next">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-avatar>
+        <ion-button class="profile-avatar-arrow" (click)="nextAvatar()">
+          <ion-icon class="profile-avatar-arrow-icon" slot="icon-only" src="assets/imágenes/flecha-der-2.svg">
+          </ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </div>
+
+    <div class="user-name" *ngIf="contentLoaded">
+      <span class="input-label">Nombre</span>
+      <ion-input [(ngModel)]="name" class="input-form" value={{name}}></ion-input>
+      <span class="input-label">Apellidos</span>
+      <ion-input [(ngModel)]="lastName" class="input-form" value={{lastName}}></ion-input>
+    </div>
+
+    <div class="user-name" *ngIf="!contentLoaded">
+      <span class="input-label">Nombre</span>
+      <ion-input [(ngModel)]="name" class="input-form">
+        <ion-skeleton-text animated style="width: 100%"></ion-skeleton-text>
+      </ion-input>
+      <span class="input-label">Apellidos</span>
+      <ion-input [(ngModel)]="lastName" class="input-form">
+        <ion-skeleton-text animated style="width: 100%"></ion-skeleton-text>
+      </ion-input>
+    </div>
+
+    <div class="profile-settings-btns ion-text-center">
+      <ion-button class="profile-settings-btns-confirm" expand="block" (click)="saveChanges()"
+        [routerLink]="['/perfil']">Confirmar</ion-button>
+      <sub class="profile-settings-btns-cancel" (click)="goBackToProfile()">Cancelar</sub>
+      <br><br>
+    </div>
+  </div>
+</ion-content>

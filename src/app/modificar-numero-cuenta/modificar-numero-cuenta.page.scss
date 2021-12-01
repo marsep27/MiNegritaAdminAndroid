@@ -1,0 +1,190 @@
+* {
+    font-family: "VisbyCF-Light";
+}
+
+ion-header {
+    background: #f4fcfd;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.08);
+    .header-title {
+        display: inline-block;
+        font-size: 3.4vh;
+        font-family: "VisbyCF-Bold";
+        --background: #f4fcfd;
+        color: #0f7386;
+        margin: 5vh 0 1.5vh 4vw;
+    }
+}
+ion-content {
+    --background: #ffffff;
+    height: auto;
+    width: auto;
+    ion-grid {
+        vertical-align: middle;
+        margin-top: 18px;
+        margin-right: 18px;
+        margin-left: 18px;
+        padding-left: 0px;
+        padding-right: 0px;
+        ion-row {
+            ion-col {
+                ion-text {
+                    h5 {
+                        font-family: "VisbyCF-DemiBold";
+                        font-size: 19px;
+                    }
+                }
+                ion-label {
+                    margin-left: 10px;
+                    font-family: "VisbyCF-Light";
+                    font-size: 16px;
+                }
+                ion-input {
+                    border-radius: 10px;
+                    height: 42px;
+                    font-size: 16px;
+                    line-height: 18px;
+                    font-family: "VisbyCF-Light";
+                    background-color: #f4fcfd;
+
+                    .style {
+                        padding-left: 16px;
+                        padding-top: 12px;
+                        padding-bottom: 9px;
+                    }
+                    ::placeholder {
+                        left: 16px;
+                    }
+                }
+                ion-item{
+                    height: 42px;
+                    border-radius: 10px;
+                    font-size: 16px;
+                    line-height: 18px;
+                    font-family: "VisbyCF-Light";
+                    background: #f4fcfd;
+                    background-color: #f4fcfd;
+                }
+            }
+
+            .content-form {
+                margin: 0px;
+                padding: 0px;
+                ion-row {
+                    ion-col {
+                        padding: 0px;
+                        padding-left: 2px;
+                    }
+                }
+            }
+            .shadow-red {
+                border-radius: 10px;
+                background: #f4fcfd;
+                background-color: #f4fcfd;
+                height: 42px;
+                font-size: 16px;
+                line-height: 18px;
+                font-family: "VisbyCF-Light";
+                color: var(--ion-color-azul);
+                --color: var(--ion-color-azul);
+                border-color: #f4fcfd;
+                .placeholder {
+                    color: var(--ion-color-azul);
+                    background-color: #f4fcfd;
+                }
+            }
+            .shadow-red-text {
+                border-radius: 10px;
+                background: #f4fcfd;
+                background-color: #f4fcfd;
+                min-height: 80px;
+                font-size: 16px;
+                line-height: 18px;
+                font-family: "VisbyCF-Light";
+                color: var(--ion-color-azul);
+                --color: var(--ion-color-azul);
+                border-color: #f4fcfd;
+                .placeholder {
+                    color: var(--ion-color-azul);
+                    background-color: #f4fcfd;
+                }
+            }
+            .error-message {
+                color: var(--ion-color-danger);
+            }
+        }
+    }
+}
+
+ion-footer {
+    margin: 0px;
+    padding: 0px;
+    height: 56px;
+    background: #ffffff;
+    --background: #ffffff;
+    border-color: #ffffff;
+    border-top-color: #ffffff !important;
+    box-shadow: none !important;
+    ion-grid {
+        margin: 0px;
+        padding: 0px;
+        ion-row {
+            margin: 0px;
+            padding: 0px;
+            ion-col {
+                margin: 0px;
+                padding: 0px;
+                //Botón Anterior
+                #anterior {
+                    margin: 0px;
+                    padding: 0px;
+                    text-transform: none;
+                    width: 100%;
+                    height: 56px;
+                    top: 0px;
+                    font-family: "VisbyCF-Bold";
+                    font-size: 20.2697px;
+                    --border-radius: 0px 22px 0px 0px;
+                }
+                //Botón Continuar
+                ion-button {
+                    margin: 0px;
+                    padding: 0px;
+                    text-transform: none;
+                    width: 100%;
+                    height: 56px;
+                    top: 0px;
+                    font-family: "VisbyCF-Bold";
+                    font-size: 20.2697px;
+                    --border-radius: 22px 0px 0px 0px;
+                }
+            }
+        }
+    }
+}
+
+.text-input::-moz-placeholder {
+    color: #0f7386;
+}
+
+.text-input:-ms-input-placeholder {
+    color: #0f7386;
+}
+
+.text-input::-webkit-input-placeholder {
+    text-indent: 0;
+    color: #0f7386;
+}
+
+.error-message {
+    font-family: "VisbyCF-Light";
+    font-size: 12px;
+}
+
+.item-date{
+    --background: #f4fcfd;
+    ion-datetime{
+        padding: 0px;
+        margin: 0px;
+        color: cadetblue;
+    }
+}
